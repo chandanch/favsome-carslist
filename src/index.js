@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client';
 import { ThemeProvider, createTheme } from '@mui/material';
 
 import App from './App';
+import { Provider } from 'react-redux';
+import { store } from './store';
 
 const root = createRoot(document.getElementById('root'));
 
@@ -29,7 +31,9 @@ const theme = createTheme({
 });
 
 root.render(
-	<ThemeProvider theme={theme}>
-		<App />
-	</ThemeProvider>
+	<Provider store={store}>
+		<ThemeProvider theme={theme}>
+			<App />
+		</ThemeProvider>
+	</Provider>
 );
