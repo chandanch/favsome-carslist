@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const formSlice = createSlice({
-	name: 'formSlice',
+	name: 'form',
 	initialState: {
 		name: '',
 		price: 0,
