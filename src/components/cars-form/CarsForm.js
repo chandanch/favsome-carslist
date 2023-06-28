@@ -46,7 +46,12 @@ const CarsForm = () => {
 					onChange={handlePriceChange}
 				/>
 
-				<Button variant='contained' color='primary' type='submit'>
+				<Button
+					variant='contained'
+					color='secondary'
+					type='submit'
+					className={styles.carsFormSubmitBtn}
+				>
 					Add Car
 				</Button>
 			</form>
