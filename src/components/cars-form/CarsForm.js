@@ -52,7 +52,7 @@ const CarsForm = () => {
 
 				<Button
 					variant='contained'
-					color='primary'
+					color='secondary'
 					type='submit'
 					className={styles.carsFormSubmitBtn}
 				>
