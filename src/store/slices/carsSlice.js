@@ -8,7 +8,7 @@ const carsSlice = createSlice({
 	},
 	reducers: {
 		addCar: (state, action) => {
-			state.push({
+			state.cars.push({
 				...action.payload,
 				id: nanoid(),
 			});
