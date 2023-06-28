@@ -1,0 +1,12 @@
+.carsForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.carsFormTextField {
+    margin-bottom: 1rem;
+}
+
+.carsFormSubmitBtn {
+    margin-top: 1rem;
+}

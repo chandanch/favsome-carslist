@@ -1,7 +1,9 @@
 import TextField from '@mui/material/TextField';
 import { useDispatch, useSelector } from 'react-redux';
-import { addCar, updateName, updatePrice } from '../../store';
 import Button from '@mui/material/Button';
+
+import { addCar, updateName, updatePrice } from '../../store';
+import styles from './CarsForm.module.css';
 
 const CarsForm = () => {
 	const dispatch = useDispatch();
@@ -27,7 +29,7 @@ const CarsForm = () => {
 
 	return (
 		<div>
-			<form onSubmit={onFormSubmit}>
+			<form className={styles.carsForm} onSubmit={onFormSubmit}>
 				<TextField
 					id='name'
 					label='Car Name'
@@ -35,6 +37,7 @@ const CarsForm = () => {
 					color='primary'
 					value={name}
 					onChange={handleNameChange}
+					className={styles.carsFormTextField}
 				/>
 				<TextField
 					id='price'
@@ -44,9 +47,15 @@ const CarsForm = () => {
 					value={price || ''}
 					type='number'
 					onChange={handlePriceChange}
+					className={styles.carsFormTextField}
 				/>
 
-				<Button variant='contained' color='primary' type='submit'>
+				<Button
+					variant='contained'
+					color='primary'
+					type='submit'
+					className={styles.carsFormSubmitBtn}
+				>
 					Add Car
 				</Button>
 			</form>

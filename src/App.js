@@ -1,7 +1,7 @@
 import { Typography, AppBar, Toolbar, Box } from '@mui/material';
 
 import CarsList from './components/CarsList';
-import CarsForm from './components/CarsForm';
+import CarsForm from './components/cars-form/CarsForm';
 
 import './styles/App.css';
 
