@@ -20,7 +20,7 @@ const App = () => {
 			<Toolbar />
 			<div className='favs-container'>
 				<CarsForm />
-				<hr />
+
 				<CarsList />
 			</div>
 		</div>
