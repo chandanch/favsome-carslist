@@ -5,12 +5,20 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { IconButton, Divider } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeCar } from '../store';
 
 const CarsList = () => {
 	const cars = useSelector((state) => {
 		return state.favsomes.cars;
 	});
+
+	const dispatch = useDispatch();
+
+	const deleteCar = (id) => {
+		console.log('ID', id);
+		dispatch(removeCar(id));
+	};
 
 	const displayCarsList = () => {
 		const carsList = cars.map((car) => {
@@ -19,7 +27,11 @@ const CarsList = () => {
 					key={car.id}
 					disablePadding
 					secondaryAction={
-						<IconButton edge='end' aria-label='delete'>
+						<IconButton
+							edge='end'
+							aria-label='delete'
+							onClick={() => deleteCar(car.id)}
+						>
 							<DeleteIcon color='danger' />
 						</IconButton>
 					}
