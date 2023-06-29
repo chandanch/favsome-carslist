@@ -6,9 +6,14 @@ import ListItemText from '@mui/material/ListItemText';
 import { IconButton, Divider } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTheme } from '@mui/material/styles';
+
 import { removeCar } from '../store';
 
 const CarsList = () => {
+	const theme = useTheme();
+	const priceTextColor = theme.palette.pricer;
+
 	const cars = useSelector((state) => {
 		return state.favsomes.cars;
 	});
@@ -39,8 +44,18 @@ const CarsList = () => {
 					<ListItemButton>
 						<ListItemText
 							primary={
-								<Typography variant='h6' color='primary'>
-									{car.name} - ${car.price}
+								<Typography variant='h6' color='secondary'>
+									{car.name}
+								</Typography>
+							}
+						/>
+						<ListItemText
+							primary={
+								<Typography
+									variant='h6'
+									sx={{ color: priceTextColor.main }}
+								>
+									${car.price}
 								</Typography>
 							}
 						/>

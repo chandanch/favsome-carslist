@@ -21,6 +21,7 @@ const App = () => {
 			<div className='favs-container'>
 				<CarsForm />
 				<br />
+				<hr />
 				<CarsList />
 			</div>
 		</div>

@@ -27,6 +27,10 @@ const theme = createTheme({
 		danger: {
 			main: '#ee3502',
 		},
+		pricer: {
+			main: '#1e5e14',
+			contrastText: '#fff',
+		},
 	},
 });
 
