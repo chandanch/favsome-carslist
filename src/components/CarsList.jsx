@@ -3,13 +3,13 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import { IconButton } from '@mui/material';
+import { IconButton, Divider } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useSelector } from 'react-redux';
 
 const CarsList = () => {
 	const cars = useSelector((state) => {
-		return state.cars.cars;
+		return state.favsomes.cars;
 	});
 
 	const displayCarsList = () => {
@@ -28,7 +28,7 @@ const CarsList = () => {
 						<ListItemText
 							primary={
 								<Typography variant='h6' color='primary'>
-									{car.name} ${car.price}
+									{car.name} - ${car.price}
 								</Typography>
 							}
 						/>
@@ -42,9 +42,10 @@ const CarsList = () => {
 
 	return (
 		<div className='dede'>
-			<Typography variant='h3' color='secondary'>
+			<Typography variant='h5' color='secondary' align='center'>
 				Cars List
 			</Typography>
+			<Divider />
 			<List>{displayCarsList()}</List>
 		</div>
 	);
