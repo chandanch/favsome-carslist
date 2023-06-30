@@ -48,9 +48,7 @@ const CarsList = () => {
 									{car.name}
 								</Typography>
 							}
-						/>
-						<ListItemText
-							primary={
+							secondary={
 								<Typography
 									variant='h6'
 									sx={{ color: priceTextColor.main }}
