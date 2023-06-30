@@ -13,11 +13,15 @@ const formSlice = createSlice({
 		updatePrice: (state, action) => {
 			state.price = action.payload;
 		},
+		reset: (state, action) => {
+			state.price = 0;
+			state.name = '';
+		},
 	},
 });
 
-const { updateName, updatePrice } = formSlice.actions;
+const { updateName, updatePrice, reset } = formSlice.actions;
 // get the combine reducer
 const formReducer = formSlice.reducer;
 
-export { updateName, updatePrice, formReducer };
+export { updateName, updatePrice, reset, formReducer };
