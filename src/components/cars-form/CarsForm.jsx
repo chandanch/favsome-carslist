@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import { addCar, updateName, updatePrice } from '../../store';
 import styles from './CarsForm.module.css';
 import { Grid } from '@mui/material';
+import { reset } from '../../store/slices/formSlice';
 
 const CarsForm = () => {
 	const dispatch = useDispatch();
@@ -75,6 +76,7 @@ const CarsForm = () => {
 							type='reset'
 							className={styles.carsFormSubmitBtn}
 							fullWidth
+							onClick={() => dispatch(reset())}
 						>
 							Reset Details
 						</Button>
