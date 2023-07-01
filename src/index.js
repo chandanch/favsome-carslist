@@ -15,7 +15,7 @@ const theme = createTheme({
 			'"Segoe UI Emoji"',
 			'"Segoe UI Symbol"',
 		].join(','),
-		fontSize: 12,
+		fontSize: 13,
 	},
 	palette: {
 		primary: {
@@ -26,6 +26,7 @@ const theme = createTheme({
 		},
 		danger: {
 			main: '#ee3502',
+			contrastText: '#fff',
 		},
 		pricer: {
 			main: '#1e5e14',
