@@ -33,6 +33,19 @@ const CarsForm = () => {
 		<div>
 			<form className={styles.carsForm} onSubmit={onFormSubmit}>
 				<Grid container spacing={2} alignItems='center'>
+					<Grid item xs={12}>
+						<TextField
+							id='name'
+							label='Search Cars!'
+							variant='outlined'
+							color='primary'
+							// value={name}
+							// onChange={handleNameChange}
+							className={styles.carsFormTextField}
+							fullWidth
+						/>
+					</Grid>
+					<hr />
 					<Grid item xs={6}>
 						<TextField
 							id='name'
