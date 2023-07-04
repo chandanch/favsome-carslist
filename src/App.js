@@ -4,6 +4,7 @@ import CarsList from './components/CarsList';
 import CarsForm from './components/cars-form/CarsForm';
 
 import './styles/App.css';
+import CarsSearch from './components/cars-search/CarsSearch';
 
 const App = () => {
 	return (
@@ -22,6 +23,8 @@ const App = () => {
 				<CarsForm />
 				<br />
 				<hr />
+				<CarsSearch />
+				<br />
 				<CarsList />
 			</div>
 		</div>
