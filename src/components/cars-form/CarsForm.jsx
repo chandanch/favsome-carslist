@@ -2,7 +2,7 @@ import TextField from '@mui/material/TextField';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '@mui/material/Button';
 
-import { addCar, updateName, updatePrice } from '../../store';
+import { addCar, updateName, updatePrice, updateSearchTerm } from '../../store';
 import styles from './CarsForm.module.css';
 import { Grid } from '@mui/material';
 import { reset } from '../../store/slices/formSlice';
@@ -22,11 +22,19 @@ const CarsForm = () => {
 		return state.form;
 	});
 
+	const { searchTerm } = useSelector((state) => {
+		return state.favsomes.searchTerm;
+	});
+
 	const onFormSubmit = (event) => {
 		console.log('submit form	');
 		event.preventDefault();
 
 		dispatch(addCar({ name, price }));
+	};
+
+	const onSearchTermChange = (event) => {
+		dispatch(updateSearchTerm(event.target.value));
 	};
 
 	return (
@@ -39,13 +47,15 @@ const CarsForm = () => {
 							label='Search Cars!'
 							variant='outlined'
 							color='primary'
-							// value={name}
-							// onChange={handleNameChange}
+							value={searchTerm}
+							onChange={onSearchTermChange}
 							className={styles.carsFormTextField}
 							fullWidth
 						/>
 					</Grid>
-					<hr />
+					<Grid item xs={12}>
+						<hr />
+					</Grid>
 					<Grid item xs={6}>
 						<TextField
 							id='name'
