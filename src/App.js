@@ -5,6 +5,7 @@ import CarsForm from './components/cars-form/CarsForm';
 
 import './styles/App.css';
 import CarsSearch from './components/cars-search/CarsSearch';
+import CarsValue from './components/cars-value/CarsValue';
 
 const App = () => {
 	return (
@@ -26,6 +27,8 @@ const App = () => {
 				<CarsSearch />
 				<br />
 				<CarsList />
+				<br />
+				<CarsValue />
 			</div>
 		</div>
 	);
