@@ -33,9 +33,6 @@ const CarsForm = () => {
 		<div>
 			<form className={styles.carsForm} onSubmit={onFormSubmit}>
 				<Grid container spacing={2} alignItems='center'>
-					<Grid item xs={12}>
-						<hr />
-					</Grid>
 					<Grid item xs={6}>
 						<TextField
 							id='name'

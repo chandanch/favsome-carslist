@@ -18,6 +18,14 @@ const CarsList = () => {
 		return state.favsomes.cars;
 	});
 
+	const searchTerm = useSelector((state) => {
+		return state.favsomes.searchTerm;
+	});
+
+	const filteredCars = cars.filter((car) =>
+		car.name.toLowerCase().includes(searchTerm.toLowerCase())
+	);
+
 	const dispatch = useDispatch();
 
 	const deleteCar = (id) => {
@@ -26,7 +34,7 @@ const CarsList = () => {
 	};
 
 	const displayCarsList = () => {
-		const carsList = cars.map((car) => {
+		const carsList = filteredCars.map((car) => {
 			return (
 				<ListItem
 					key={car.id}
