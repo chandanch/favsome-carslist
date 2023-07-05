@@ -22,6 +22,10 @@ const CarsList = () => {
 		return state.favsomes.searchTerm;
 	});
 
+	const carNameInput = useSelector((state) => {
+		return state.form.name;
+	});
+
 	const filteredCars = cars.filter((car) =>
 		car.name.toLowerCase().includes(searchTerm.toLowerCase())
 	);
