@@ -23,7 +23,6 @@ const CarsForm = () => {
 	});
 
 	const onFormSubmit = (event) => {
-		console.log('submit form	');
 		event.preventDefault();
 
 		dispatch(addCar({ name, price }));

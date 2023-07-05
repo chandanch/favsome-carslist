@@ -12,7 +12,6 @@ import { removeCar } from '../store';
 
 const CarsList = () => {
 	const theme = useTheme();
-	console.log(theme.palette);
 	const { pricer, primary, highlighter } = theme.palette;
 
 	const cars = useSelector((state) => {
