@@ -12,7 +12,8 @@ import { removeCar } from '../store';
 
 const CarsList = () => {
 	const theme = useTheme();
-	const priceTextColor = theme.palette.pricer;
+	console.log(theme.palette);
+	const { pricer, primary, highlighter } = theme.palette;
 
 	const cars = useSelector((state) => {
 		return state.favsomes.cars;
@@ -39,6 +40,9 @@ const CarsList = () => {
 
 	const displayCarsList = () => {
 		const carsList = filteredCars.map((car) => {
+			const isHighlight =
+				carNameInput &&
+				car.name.toLowerCase().includes(carNameInput.toLowerCase());
 			return (
 				<ListItem
 					key={car.id}
@@ -56,14 +60,21 @@ const CarsList = () => {
 					<ListItemButton>
 						<ListItemText
 							primary={
-								<Typography variant='h6' color='secondary'>
+								<Typography
+									variant='h6'
+									sx={{
+										color: isHighlight
+											? highlighter.main
+											: primary.main,
+									}}
+								>
 									{car.name}
 								</Typography>
 							}
 							secondary={
 								<Typography
 									variant='h6'
-									sx={{ color: priceTextColor.main }}
+									sx={{ color: pricer.main }}
 								>
 									${car.price}
 								</Typography>

@@ -33,7 +33,7 @@ const theme = createTheme({
 			contrastText: '#fff',
 		},
 		highlighter: {
-			main: '#FFFF00',
+			main: '#FF6F00',
 		},
 	},
 });
